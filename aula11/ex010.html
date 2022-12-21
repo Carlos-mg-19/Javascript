@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        div#res{
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas </h1>
+     velocidade do carro<input type="number" name="txtvel" id="txtvel">
+     <input type="button" value="verificar" onclick="calcular()">
+     <div id="res"></div>
+
+
+     
+     Digite nome do seu pais <input type="text" name="txtp" id="txtp">
+        <input type="button" value="enviar" onclick="enviar()">
+        <div id="rest"></div>
+     <script>
+        
+        function calcular() {
+            var txtv = window.document.getElementById('txtvel')
+            var res = document.querySelector('div#res')
+            var vel = Number(txtv.value)
+                res.innerHTML = `<p>Sua velocidade <strong>${vel}km/h</strong></p>`
+            if (vel > 60){
+                res.innerHTML += `<p>Voce sera multado por dirigir acima de <strong>${vel}km/h</strong></p>`
+            }else{
+                res.innerHTML = `<p>Sua velocidade <strong>${vel}km/h</strong></p>`
+                res.innerHTML += '<p>dirija sempre com sinto de seguraça</p>'
+            }
+            
+        }
+        function enviar(){
+            var txt = document.getElementById('txtp')
+            var rest = document.querySelector('div#rest')
+            var tx = (txt.value)
+                rest.innerHTML = `<p>Seu pais è ${tx}</p>`
+            if (tx == 'brasil'){
+                rest.innerHTML += '<p>Você e <strong>Brasileiro</strong></p>'
+            }else{
+                rest.innerHTML = `<p>Seu pais è <strong>${tx}</strong></p>`
+                rest.innerHTML += '<p>Você e <strong>estrangeiro</strong></p>'
+            }
+        }
+     </script>
+</body>
+</html>
