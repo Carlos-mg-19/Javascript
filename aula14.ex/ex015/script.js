@@ -7,7 +7,7 @@ function contar(){
     var n3 = Number(nume3.value)
     var res = document.getElementById('res')
 
-    for (var c = n1; c < n2; c++){
-        res.innerHTML = `.${c},`
+    for (var c = n1; c < n2; c += n3){
+        res.innerHTML += `<div>${c},</div>`
     }
 }
