@@ -16,9 +16,9 @@ section{
 div{
     padding: 5px;
 }
-img{
-    display: block;
-    margin: auto;
+
+select{
+    width: 150px;
 }
 
 footer{
